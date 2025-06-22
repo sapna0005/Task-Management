@@ -70,9 +70,9 @@ body{
   .container::after {
     position: absolute;
     content: "";
-    width: 80%;
-    height: 80%;
-    right: -40%;
+  
+    height: 60%; 
+    left: 70%; 
     background: rgb(157, 173, 203);
     background: radial-gradient(
       circle,
