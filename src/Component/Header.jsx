@@ -86,13 +86,13 @@ const Header = () => {
       <Navbar className="header1">
         <Container>
           <Navbar.Brand>
-            {" "}
-            <p className="taskhead">Task Management System</p>{" "}
+            
+            <p className="taskhead">Task Management System</p>
           </Navbar.Brand>
           <Nav className="justify-content-end">
             <Nav.Link>
               <FaUserCircle className="userlogo" onClick={handleShow} />
-              User
+             
             </Nav.Link>
           </Nav>
         </Container>
@@ -135,7 +135,7 @@ const Header = () => {
                     setResetShow(true);
                   }}>Forgot password?</a>
               </div>
-              <div id="footer-area">
+              <div id="footer2-area">
                 <button onClick={handleSubmit}>Log In</button>
               </div>
               
@@ -183,7 +183,7 @@ const Header = () => {
                 />
               </div>
 
-              <div id="footer-area">
+              <div id="footer2-area">
                 <button onClick={handleResetPassword}>Reset Password</button>
               </div>
 
