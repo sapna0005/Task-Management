@@ -87,7 +87,7 @@ const Header = () => {
         <Container>
           <Navbar.Brand>
             
-            <p className="taskhead">Task Management System</p>
+            <p className="taskhead">Task Management</p>
           </Navbar.Brand>
           <Nav className="justify-content-end">
             <Nav.Link>
