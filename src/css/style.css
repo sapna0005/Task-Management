@@ -1,0 +1,909 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*----------------------------------- Admin Login ------------------------------*/
+.header1{
+  height: 90px;
+  background-color: #8FC1E3;
+  
+}
+body{
+  background-image: url(https://images.unsplash.com/photo-1622737133809-d95047b9e673?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.userlogo{
+  font-size: 27px;
+  margin: 8px;
+  color: white;
+}
+ 
+.left {
+    width: 66%;
+    height: 100%;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    
+    position: relative;
+    
+  }
+
+  .form::before {
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 40%;
+    right: 1%;
+    z-index: -1;
+    background: radial-gradient(
+      circle,
+      rgb(194, 13, 170) 20%,
+      rgb(26, 186, 235) 60%,
+
+      rgb(26, 186, 235) 100%
+    );
+    filter: blur(70px);
+    border-radius: 50%;
+  }
+
+  .right {
+    width: 34%;
+    height: 100%;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container::after {
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 80%;
+    right: -40%;
+    background: rgb(157, 173, 203);
+    background: radial-gradient(
+      circle,
+      rgba(157, 173, 203, 1) 61%,
+      rgba(99, 122, 159, 1) 100%
+    );
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .input,
+  button {
+    background: rgba(253, 253, 253, 0);
+    outline: none;
+    border: 1px solid rgba(255, 0, 0, 0);
+    border-radius: 0.5rem;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    display: block;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1em;
+    
+  }
+
+  .input-block {
+    position: relative;
+    padding-bottom: 20px;
+  }
+  .head{
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  .taskhead{
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .userhead{
+     color: white;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  .admin-label {
+    position: absolute;
+    left: 15%;
+    top: 27%;
+    pointer-events: none;
+    color:white;
+    padding-left: 80px;
+
+  }
+
+  .forgot {
+    display: block;
+    margin: 5px 0 10px 0;
+    margin-left: 35px;
+    color: #5e7eb6;
+    font-size: 0.9em;
+  }
+
+  .input:focus + label,
+  .input:valid + label {
+    transform: translateY(-120%) scale(0.9);
+    transition: all 0.4s;
+  }
+
+  button {
+    background-color: #5e7eb6;
+    color: white;
+    font-size: medium;
+    box-shadow: 2px 4px 8px rgba(70, 70, 70, 0.178);
+  }
+
+  a {
+    color: #5e7eb6;
+  }
+
+  .input {
+    box-shadow: inset 4px 4px 4px rgba(222, 219, 219, 0.315),
+      4px 4px 4px rgba(218, 218, 218, 0.13);
+  };
+  
+
+
+  /*------------------------- User Login Header Modal ----------------------------*/
+
+  #login-area,
+  #email-area,
+  #password-area,
+  #footer-area
+   {
+    position: relative;
+    z-index: 2;
+   
+  }
+
+  #login-area {
+    width: 100%;
+    height: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  #login-area p {
+    top: 0.35em;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+  }
+
+  #login-area #behind {
+    top: 60%;
+    font-size: 1em;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+  }
+
+ 
+
+  #email-area {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1em;
+    transition: all 0.25s ease;
+  }
+
+  #email-area input {
+    width: 100%;
+    border: 2px solid #5e7eb6;
+    border-radius: 0.5em;
+    height: 2.5em;
+    padding-left: 1em;
+    font-size: 0.95em;
+    font-weight: 100;
+    transition: all 0.5s ease;
+    outline: none;
+    box-shadow: 0px 5px 5px -3px rgb(0, 0, 0, 0.2);
+  }
+
+  #password-area {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    transition: all 0.25s ease;
+  }
+
+  #password-area input {
+    width: 100%;
+    border: 2px solid #5e7eb6;
+    font-size: 0.95em;
+    border-radius: 0.5em;
+    height: 2.5em;
+    padding-left: 1em;
+    transition: all 0.25s ease;
+    outline: none;
+    box-shadow: 0px 5px 5px -3px rgb(0, 0, 0, 0.2);
+  }
+
+  #password-area a {
+    padding-top: 0.5em;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: all 0.25s ease;
+    color: grey;
+  }
+
+  #footer-area {
+    margin-top: 0%;
+    padding-top: 0%;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #6041bf;
+    transition: all 0.25s ease;
+  }
+
+  #footer-area button {
+    width: 100%;
+    border: 2px solid #6041bf;
+    border-radius: 0.5em;
+    height: 2.5em;
+    padding-left: 1em;
+    font-size: 0.95em;
+    font-weight: 100;
+    transition: all 0.25s ease;
+    color: white;
+    font-weight: bold;
+    background-color: #6041bf;
+    box-shadow: 0px 5px 5px -3px rgb(0, 0, 0, 0.2);
+  }
+
+  #footer-area p,
+  #footer-area a {
+    font-size: 0.8em;
+    transition: all 0.25s ease;
+  }
+
+  #text-inside {
+    padding-top: 0.5em;
+    display: flex;
+  }
+
+  #link {
+    padding-left: 0.1em;
+    font-weight: bold;
+  }
+
+  #background-color {
+    width: 100%;
+    height: 3.5em;
+    background-color: #6041bf;
+    position: absolute;
+    top: 0em;
+    z-index: 1;
+    transition: all 0.5s ease;
+    box-shadow: inset 5px 0px #24135a;
+  }
+
+  #link-circle {
+    width: 100%;
+    height: 4.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  #link-circle svg {
+    transition: all 0.25s ease;
+  }
+
+  #whitefilter {
+    width: 3.5em;
+    height: 3.5em;
+    top: 2.5px;
+    right: 2.5px;
+    position: absolute;
+    z-index: 2;
+    border-top-right-radius: 1.25em;
+    box-shadow: 35px -35px 0px -1px white;
+  }
+
+  ::placeholder {
+    color: #6041bf;
+    font-weight: bold;
+  }
+
+
+
+
+
+  #footer-area button:active {
+    color: #6041bf;
+    background-color: white;
+    width: 90%;
+  }
+
+  #link-circle svg:hover {
+    transform: scale(1.25);
+    margin: 0.5em;
+  };
+
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/*-------------------------------- Admin Dashboard -----------------------------------*/
+.app {
+  display: flex;
+  height: 230vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(45deg, skyblue, darkblue);
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+ 
+}
+
+.sidebar li {
+  margin: 15px 0;
+  cursor: pointer;
+  font-weight: 700;
+   &:hover{
+    color: darkblue;
+  }
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-image: url(https://images.unsplash.com/photo-1734277659521-2985326528d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGFkbWluJTIwZGFzaGJvYXJkJTIwaW1hZ2VzfGVufDB8fDB8fHww);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(45deg, skyblue, rgb(96, 96, 200));
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.admin-dash-card {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.admin-dash-carddetails {
+  height: 160px;
+  width: 300px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.admin-dash-carddetails:hover {
+  transform: translateY(-5px);
+}
+
+.progresstask {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-task-success {
+  width: 70px;
+  height: 70px;
+}
+.card-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+ 
+  padding-left: 9px;
+  
+}
+
+.card-subtext {
+  font-size: 14px;
+  color: #64748b;
+  text-align: center;
+}
+
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  
+  flex-wrap: wrap;
+}
+
+.chart-section
+{
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  min-width: 350px;
+}
+.target-section {
+  background-color:rgb(245, 237, 238);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+ 
+  min-width: 250px;
+}
+
+h4 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.progress-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.progress-label {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.progress-label strong {
+  font-size: 20px;
+  color: #111;
+}
+
+.progress-label p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+.welcomeheader{
+  font-family: 'Brush Script MT', 'Pacifico', cursive;
+  color: #E8F9FF;
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+  
+
+
+ 
+
+/*--------------------------------- Admindashboard CreateUser ---------------------------*/
+
+.userlist{
+  text-decoration: none;
+  color: white;
+}
+.create-user-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(45deg, skyblue, darkblue);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 25px;
+  color:white;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+
+
+.user-label{
+  color:white;
+  padding: 5px;
+  font-weight: bolder;
+}
+.user-placeholder{
+  
+ 
+  padding: 10px;
+  outline: none;
+    border: none;
+    font-size: 18px;
+    background: #dde1e7;
+    color: #595959;
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 5px #6b6d73,
+                inset -5px -5px 10px #b7b0b073;
+ 
+}
+.user-placeholder:focus{
+  outline: none;
+  box-shadow: inset 1px 1px 2px #808cb5,
+                inset -1px -1px 2px #ffffff73;
+}
+
+
+
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  background: #4b66ac;
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+  outline: none;
+    border: none;
+  box-shadow: inset 2px 2px 5px #6b6d73,
+                inset -5px -5px 10px #7997e3;
+}
+
+.submit-button:focus {
+    color: #95c8ea;
+    box-shadow: inset 2px 2px 5px #BABECC,
+               inset -5px -5px 10px #ffffff73;
+  }
+
+
+/*----------------------------- Admindashboard AssignTask -----------------------------------*/
+.taskform{
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+ 
+     
+}
+
+.taskform .form_front{
+ 
+    backface-visibility: hidden;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0,1),
+    inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+}
+.taskheading{
+  color: black;
+  padding: 22px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.heading2{
+  height: 90px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: beige;
+}
+.formtitle{
+  padding-left: 10px;
+  font-weight: 500;
+}
+.tasktable{
+ height: 250px;
+ 
+}
+th,td{
+  text-align: center;
+}
+.taskplaceholder{
+  width: 320px;
+  border-radius: 20px;
+  padding:10px;
+  margin-left: 10px;
+  
+  outline: none;
+    transition: 0.35s;
+    
+    box-shadow: 6px 6px 10px rgba(0,0,0,1),
+    1px 1px 10px rgba(255, 255, 255, 0.6);
+}
+.taskmodal{
+  width: 420px;
+  position: absolute;
+  left: 50%;
+  
+}
+.taskbtn{
+  margin-left: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+   background-color: #212121;
+    
+    border: 2px solid #212121;
+    box-shadow: 6px 6px 10px rgba(0,0,0,1),
+    1px 1px 10px rgba(255, 255, 255, 0.6);
+    color: #fff;
+   
+    transition: 0.35s;
+}
+
+/*----------------- User Dashboard ----------------------------*/
+.app1{
+  display: flex;
+  height: 150vh;
+}
+.main-content1{
+  
+  flex-grow: 1;
+  padding: 20px;
+  background-image: url(https://images.unsplash.com/photo-1481833761820-0509d3217039?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+
+
+ .btn:hover {
+    opacity: .95;
+  }
+
+  .btn .animation {
+    border-radius: 100%;
+    animation: ripple 0.6s linear infinite;
+  }
+
+  @keyframes ripple {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+    }
+  }
+
+  .dashboard-content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-box {
+  background-color: #C0C9EE;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-box h4 {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 20px;
+}
+
+.card-box p {
+  font-size: 1.1rem;
+  color: #27ae60;
+
+}
+
+.searchbar{
+  margin: 15px 0px;
+  width: 300px;
+  
+}
+
+.delete-button {
+    background-color: #000;
+    color: #fff;
+    font-size: 30px;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px 15px 12px 12px;
+    cursor: pointer;
+    position: relative;
+    will-change: transform;
+    transition: all .1s ease-in-out 0s;
+    user-select: none;
+    /* Add gradient shading to each side */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background-position: bottom right, bottom right;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow: inset -4px -10px 0px rgba(255, 255, 255, 0.4),
+      inset -4px -8px 0px rgba(0, 0, 0, 0.3),
+      0px 2px 1px rgba(0, 0, 0, 0.3),
+      0px 2px 1px rgba(255, 255, 255, 0.1);
+    transform: perspective(70px) rotateX(5deg) rotateY(0deg);
+  }
+
+  .delete-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5));
+    z-index: -1;
+    border-radius: 15px;
+    box-shadow: inset 4px 0px 0px rgba(255, 255, 255, 0.1),
+      inset 4px -8px 0px rgba(0, 0, 0, 0.3);
+    transition: all .1s ease-in-out 0s;
+  }
+
+  .delete-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background-position: bottom right, bottom right;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    border-radius: 15px;
+    transition: all .1s ease-in-out 0s;
+  }
+
+  .delete-button:active {
+    will-change: transform;
+    transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(3px) scale(0.96);
+    height: 64px;
+    border: 0.25px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset -4px -8px 0px rgba(255, 255, 255, 0.2),
+      inset -4px -6px 0px rgba(0, 0, 0, 0.8),
+      0px 1px 0px rgba(0, 0, 0, 0.9),
+      0px 1px 0px rgba(255, 255, 255, 0.2);
+    transition: all .1s ease-in-out 0s;
+  }
+
+  .delete-button::after:active {
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.2));
+  }
+
+  .delete-button:active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 50%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: overlay 0.1s ease-in-out 0s;
+    pointer-events: none;
+  }
+
+  @keyframes overlay {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .delete-button:focus {
+    outline: none;
+  }
+
+  .actionbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+     background: linear-gradient(32deg,#16C47F, #89AC46,#D3E671,#ffeb3b,#03a9f4);
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    transition: all 0.2s ease;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    text-shadow: 0 1px #fff;
+  }
+
+  .actionbtn1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(32deg,#FF0000,#f07b7b,#e8a1a1,#FFFC9B, #FEF3E2);
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    transition: all 0.2s ease;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    text-shadow: 0 1px #fff;
+  }
+
+  .actionbtn:hover {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+  }
+
+  .actionbtn:active {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+  }
+
+  .actionbtn:focus {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+  }
